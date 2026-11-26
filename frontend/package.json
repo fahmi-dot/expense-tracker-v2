@@ -1,0 +1,1 @@
+{"name":"expense-tracker-ui","private":true,"scripts":{"dev":"vite","build":"tsc -b && vite build","test":"echo no frontend unit tests"},"dependencies":{"@vitejs/plugin-react":"4.3.3","vite":"5.4.10","typescript":"5.6.3","react":"18.3.1","react-dom":"18.3.1"},"devDependencies":{"@types/react":"18.3.12","@types/react-dom":"18.3.1"}}
