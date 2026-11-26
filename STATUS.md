@@ -20,21 +20,23 @@ File: /home/ubuntu/projects/expense-tracker-v2/FSD.md
 - Frontend React + Vite + TypeScript, backend Node.js + Express + TypeScript terpisah.
 - Data: users, categories, expenses; sessions mendukung revoke logout/cookie HTTP-only.
 - Satu akun lokal provisioning seed/manual; tanpa pendaftaran publik.
-- IDR dua digit desimal; zona waktu konfigurabel default `Asia/Jakarta`.
+- IDR dua digit desimal; zona waktu configurable default `Asia/Jakarta`.
 - UI/pesan pengguna Bahasa Indonesia.
 - Non-goal: multi-user, pembayaran, mobile, pendaftaran publik.
 
-27|## Status persetujuan
-28|PRD disetujui. FSD/database role design selesai.
-29|
-30|## Status implementasi
-31|- Backend API: Selesai (Node/Express/TS).
-32|- Frontend UI: Selesai (React/Vite/TS).
-33|- Validasi & Test: Selesai (Unit test validation.test.ts).
-34|- Deployment dev: Build frontend & backend sukses.
-35|
-36|### Catatan programmer
-37|- Sesi diuji melalui logic middleware (cookie required).
-38|- Ekspor CSV memakai serializer RFC 4180.
-39|- UI menggunakan satu halaman (SPA) untuk efisiensi code.
-40|- Database: login runtime dibatasi ke `expense_app`.
+## Status persetujuan
+PRD disetujui. FSD/database role design selesai.
+
+## Status implementasi
+- Backend API: Selesai (Node/Express/TS), dengan DEF-006 half-open month range.
+- Frontend UI: Selesai (React/Vite/TS).
+- Validasi & test: backend automated tests 8/8 pass.
+- Backend/frontend production builds sukses.
+
+## Status QA — final retest
+- Verdict: **GO under tested scope**.
+- Report: `/home/ubuntu/projects/expense-tracker-v2/QA-REPORT.md`.
+- DEF-001–DEF-007 closed at scope documented in report. DEF-007 fixed; regression tests added for `0001`, `0099`, and `0100`.
+- Verification: backend `npm test` 9/9 pass; backend `npm run build` pass; frontend `npm run build` pass; `git diff --check` pass.
+- Docker/PostgreSQL, DB integration, and browser E2E not run; no DB connection attempted.
+- GO under tested scope: no Critical/High/Medium defect remains. Runtime limitations remain explicit.
