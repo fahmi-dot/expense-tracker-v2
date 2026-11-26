@@ -24,5 +24,17 @@ File: /home/ubuntu/projects/expense-tracker-v2/FSD.md
 - UI/pesan pengguna Bahasa Indonesia.
 - Non-goal: multi-user, pembayaran, mobile, pendaftaran publik.
 
-## Status persetujuan
-PRD disetujui. FSD/database role design selesai dan siap tahap programmer.
+27|## Status persetujuan
+28|PRD disetujui. FSD/database role design selesai.
+29|
+30|## Status implementasi
+31|- Backend API: Selesai (Node/Express/TS).
+32|- Frontend UI: Selesai (React/Vite/TS).
+33|- Validasi & Test: Selesai (Unit test validation.test.ts).
+34|- Deployment dev: Build frontend & backend sukses.
+35|
+36|### Catatan programmer
+37|- Sesi diuji melalui logic middleware (cookie required).
+38|- Ekspor CSV memakai serializer RFC 4180.
+39|- UI menggunakan satu halaman (SPA) untuk efisiensi code.
+40|- Database: login runtime dibatasi ke `expense_app`.
